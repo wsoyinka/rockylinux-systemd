@@ -25,7 +25,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker buildx build --platform linux/amd64 -t ${{ secrets.DH_USERNAME1 }}/rockylinux-systemd:9.2 . --push
+          docker buildx build --platform linux/amd64,linux/arm64/v8  -t ${{ secrets.DH_USERNAME1 }}/rockylinux-systemd:9.2 . --push
 #       env:
 #          DOCKERHUB_USERNAME: ${{ secrets.DH_USERNAME1 }}
 #          DOCKERHUB_PASSWORD: ${{ secrets.DH_PAT1 }}
