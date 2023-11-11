@@ -12,7 +12,7 @@ RUN dnf install -y systemd systemd-udev \
 RUN rm -f /lib/systemd/system/multi-user.target.wants/*
 
 # Specify a different stop signal for systemd
-#STOPSIGNAL SIGRTMIN+3
+STOPSIGNAL SIGRTMIN+3
 
 # Mask and unmask services
 RUN systemctl mask systemd-firstboot.service systemd-udevd.service systemd-modules-load.service \
