@@ -21,7 +21,7 @@ RUN systemctl mask systemd-firstboot.service systemd-udevd.service systemd-modul
 # tmpfs
 #RUN --mount=type=tmpfs,target=/run
 
-#VOLUME [ "/sys/fs/cgroup" ]
 
 # Execute systemd via the container-entrypoint.sh script
-ENTRYPOINT [""]
+COPY container-entrypoint.sh /bin/container-entrypoint.sh
+ENTRYPOINT ["/bin/container-entrypoint.sh"]
